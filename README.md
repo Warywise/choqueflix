@@ -5,7 +5,7 @@
 Projeto desenvolvido em parceria com o time... </br>
 Gabriel Takaki > [linkedin](https://www.linkedin.com/in/gabriel-felipe-takaki-99987b214/) </br>
 Nataniel Santos > [linkedin](https://www.linkedin.com/in/nataniel-santos/) </br>
-Gustavo Sant'Anna > [linkedin](https://www.linkedin.com/in/g-s-s/)</br>
+João Pedro Reis > [linkedin](https://www.linkedin.com/in/joaoreisjpk/)</br>
 
 [Link do Site](https://choqueflix.vercel.app/)
 
