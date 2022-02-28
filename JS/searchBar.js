@@ -2,7 +2,7 @@
 import { addBtnsWatchlistEventListener, createElement, createImg, createMovieCard, allApiData } from "./main.js";
 import { removeBanner } from "./banner.js";
 
-const getSearch = document.querySelectorAll('.searchbar')[1];
+const getSearch = document.querySelectorAll('.searchbar');
 const getFilmList = document.getElementById('film-list');
 
 const createHtml = (nota, description) =>
@@ -41,9 +41,48 @@ const createFilme = async (Title, Poster, imdbRating, Plot, imdbID) => {
   addBtnsWatchlistEventListener()
 }
 
-getSearch.addEventListener('keyup', async (e) => {
+let aprove = false;
+
+const filmSearch = async (e) => {
+  console.log(e.target.innerHTML)
+  const findFilms = allApiData.filter((film) => film.title === e.target.innerHTML);
+  getFilmList.innerHTML = '';
+  document.querySelector('#page-title').innerHTML = 'Resultados da busca:'
+  findFilms.forEach((film) => createMovieCard(film));
+  if (findFilms.length < 1) {
+    const data = await fetch(`https://www.omdbapi.com/?t=${getSearch.value}&apikey=1b999e04`)
+    const dataJson = await data.json()
+    const { Title, Poster, imdbRating, Plot, imdbID } = dataJson
+    createFilme(Title, Poster, imdbRating, Plot, imdbID);
+  }
+  removeBanner();
+  aprove = false;
+}
+
+
+getSearch.forEach((item, index) => item.addEventListener('change', () => {
+  item.value !== '' ?
+  setTimeout( async() => {
+    const findFilms = allApiData.filter((film) => film.title.toLowerCase().includes(getSearch[index].value.toLowerCase()));
+    getFilmList.innerHTML = '';
+    document.querySelector('#page-title').innerHTML = 'Resultados da busca:'
+    findFilms.forEach((film) => createMovieCard(film));
+    if (findFilms.length < 1) {
+      const data = await fetch(`https://www.omdbapi.com/?t=${getSearch.value}&apikey=1b999e04`)
+      const dataJson = await data.json()
+      const { Title, Poster, imdbRating, Plot, imdbID } = dataJson
+      createFilme(Title, Poster, imdbRating, Plot, imdbID);
+    }
+    removeBanner();
+  }, 500)
+  : console.log('vazio');
+}));
+
+
+getSearch.forEach((item, index) => item.addEventListener('keyup', async (e) => {
+  if (item.value !== '') {
   if (e.keyCode === 13) {
-    const findFilms = allApiData.filter((film) => film.title.toLowerCase().includes(getSearch.value.toLowerCase()));
+    const findFilms = allApiData.filter((film) => film.title.toLowerCase().includes(getSearch[index].value.toLowerCase()));
     getFilmList.innerHTML = '';
     document.querySelector('#page-title').innerHTML = 'Resultados da busca:'
     findFilms.forEach((film) => createMovieCard(film));
@@ -55,6 +94,4 @@ getSearch.addEventListener('keyup', async (e) => {
     }
     removeBanner();
   }
-});
-
-
+}}));
