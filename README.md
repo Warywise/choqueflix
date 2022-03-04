@@ -12,29 +12,28 @@ João Pedro Reis > [linkedin](https://www.linkedin.com/in/joaoreisjpk/)</br>
 
 ![plot](./images/choquePreview.png)
 
-## Techs em uso
+## Techs em uso <br>
 
-[JavaScript] Aplication </br>
-Uso de duas API externas sobre filmes como...
-  - A [TMDB](https://www.themoviedb.org/)
-  - A [OMDB](https://rapidapi.com/blog/lp/omdb-api/)
-
-Uso da biblioteca de CSS [Semantic UI](https://semantic-ui.com/)
+ - JavaScript
+ - Uso de duas API externas sobre filmes como...
+   - A [TMDB](https://www.themoviedb.org/)
+   - A [OMDB](https://rapidapi.com/blog/lp/omdb-api/)
+ - Uso da biblioteca de CSS [Semantic UI](https://semantic-ui.com/)
 
 
 # Habilidades desenvolvidas.
 
--Lidar com diferentes chamadas à API</br>
+- Lidar com diferentes chamadas à API</br>
 
--Usar Gulp para customizar a biblioteca de CSS do Semantic UI </br>
+- Usar Gulp para customizar a biblioteca de CSS do Semantic UI </br>
 
--Criar uma barra de buscas com JQuery </br>
+- Criar uma barra de buscas com JQuery </br>
 
--Fazer uma aplicação 100% responsiva </br>
+- Fazer uma aplicação 100% responsiva </br>
 
--Criar nosso primeiro site sem ajuda nem supervisão de ninguém, apenas nosso esforço comum do grupo </br>
+- Criar nosso primeiro site sem ajuda nem supervisão de ninguém, apenas nosso esforço comum do grupo </br>
 
--Usar vários eventos diferentes do JavaScript para tornar o site funcional </br>
+- Usar vários eventos diferentes do JavaScript para tornar o site funcional </br>
 
 # O que foi desenvolvido.
 
