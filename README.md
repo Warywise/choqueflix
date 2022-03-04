@@ -7,7 +7,8 @@ Gabriel Takaki > [linkedin](https://www.linkedin.com/in/gabriel-felipe-takaki-99
 Nataniel Santos > [linkedin](https://www.linkedin.com/in/nataniel-santos/) </br>
 João Pedro Reis > [linkedin](https://www.linkedin.com/in/joaoreisjpk/)</br>
 
-> [Confira o Site Neste Link](https://choqueflix.vercel.app/)
+> Você pode conferir o [Site Neste Link](https://choqueflix.vercel.app/),
+> e o repositório original [NESTE LINK](https://github.com/joaoreisjpk/ChoqueFlix--JS-CSS-Vanilla)
 
 ![plot](./images/choquePreview.png)
 
