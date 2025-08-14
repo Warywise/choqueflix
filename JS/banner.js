@@ -8,20 +8,21 @@ const removeBanner = () => {
   getFilmList.style.marginTop = '5%';
 }
 
-function getMubiImgLink(query, year) {
-  bannerDiv.innerText = '';
-  const imgLink = fetch(`https://mubi.com/services/api/search?query=${query}`)
-  .then((data) => data.json())
-    .then(json => json.films)
-    .then((moviesList) => moviesList.find((movie) => movie.year == year && movie.title.toLowerCase() === query.toLowerCase()))
-    .then((movie) => { 
-      if(movie) return movie.still_url;
-      displayBanner()
-    })
-  if(imgLink) {
-    return imgLink;
-  }
-}
+// Mubi não oferece mais seus serviços de API
+// function getMubiImgLink(query, year) {
+//   bannerDiv.innerText = '';
+//   const imgLink = fetch(`https://mubi.com/services/api/search?query=${query}`)
+//   .then((data) => data.json())
+//     .then(json => json.films)
+//     .then((moviesList) => moviesList.find((movie) => movie.year == year && movie.title.toLowerCase() === query.toLowerCase()))
+//     .then((movie) => { 
+//       if(movie) return movie.still_url;
+//       displayBanner()
+//     })
+//   if(imgLink) {
+//     return imgLink;
+//   }
+// }
 
 async function getBannerMoviesInfo() {
   const randomPage = Math.floor(Math.random() * 15) + 1
@@ -29,11 +30,13 @@ async function getBannerMoviesInfo() {
   const json = await results.json();
   const infos = await json.results[currentBannerIndex];
 
-  const {title, overview, release_date, id, vote_average, poster_path} = infos;
+  const { title, overview, release_date, id, vote_average, poster_path, backdrop_path } = infos;
+  // console.log(infos);
   const year = release_date ? release_date.match(/\d{4}/) : undefined;
   const thumbnail = urlImg + poster_path;
   if (verifyInfoBanner(year)) {
-    const imgLink = await getMubiImgLink(title, year);
+    // const imgLink = await getMubiImgLink(title, year);
+    const imgLink = backdrop_path ? `https://www.themoviedb.org/t/p/w780${backdrop_path}` : null;
     return {title, overview, id, vote_average, imgLink, thumbnail, year};  
   }
 }
