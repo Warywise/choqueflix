@@ -13,7 +13,7 @@ Git/GitHub<br>
 <br>
 <span class='credit-title'>APIs requeridas: </span>
 <br>
-Mubi Api
+Mubi Api (Atualmente Depreciada - substituída por alternativa do TheMDB)
 <br>
 The Movie DataBase
 <br>

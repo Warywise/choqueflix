@@ -80,11 +80,11 @@ function about() {
   let limitNum;
   const refNum = window.innerWidth;
   if (refNum < 1001) {
-    changeNum = refNum < 601 ? 1.5 : 1.3;
-    limitNum = refNum < 601 ? 185 : 173;
+    changeNum = refNum < 601 ? 2 : 1.5;
+    limitNum = refNum < 601 ? 350 : 250;
   } else {
-    changeNum = 1.2;
-    limitNum = 130;
+    changeNum = 1.5;
+    limitNum = 200;
   }
   removeBanner();
   document.querySelector('#page-list').style = 'visibility: hidden';
@@ -96,11 +96,11 @@ function about() {
   creditsDiv.style.marginTop = '45%';
   intervalId = setInterval(() => {
     const margin = creditsDiv.style.marginTop.match(/\d+(\.\d+)?/g)[0];
-    index < 40 ?
+    index < 45 ?
     creditsDiv.style.marginTop = `${+(margin) - changeNum}%` :
     creditsDiv.style.marginTop = `${-(margin) + -changeNum}%`;
-    index += 1;
-    console.log(creditsDiv.style.marginTop, index);
+    index += 3;
+    // console.log(creditsDiv.style.marginTop, index);
     if (index > limitNum) {
       clearInterval(intervalId);
       creditsDiv.remove();
