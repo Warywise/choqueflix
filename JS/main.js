@@ -25,7 +25,7 @@ JSON.parse(localStorage.getItem(`watchlist-${getName}`)) : [];
 const allApiData = [];
 
 async function getApiData() {
-  for (let ind = 1; ind < 25; ind += 1) { // Pode ser testado até "ind < 501"
+  for (let ind = 1; ind < 50; ind += 1) { // Pode ser testado até "ind < 501"
     const apiData = await fetch(`${mainUrl}&page=${ind}`);
     const jsonPage = await apiData.json();
     jsonPage.results.forEach((item) => allApiData.push(item));

@@ -74,6 +74,7 @@ getSearch.forEach((item, index) => item.addEventListener('change', () => {
       createFilme(Title, Poster, imdbRating, Plot, imdbID);
     }
     removeBanner();
+    item.value = '';
   }, 500)
   : console.log('vazio');
 }));
